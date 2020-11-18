@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Car Price Prediction Model</title>
+    <style>
+        h1 {
+          color: #532424;
+          font-family: serif;
+          text-align: center;
+        }
+      form input {
+        display: block;
+        width: 90%;
+        margin: 15px auto;
+        height: 25px;
+      }
+
+      form button {
+        display: block;
+        width: 90%;
+        margin: auto;
+        height: 30px;
+      }
+    </style>
+  </head>
+  <body  >
+    <h1>Car Price Predictions</h1>
+    <form action="{{url_for('predict')}}" method="post">
+      <input
+        type="number"
+        name="present_price"
+        placeholder="Present Price at Showroom (in lacs)"
+        required="required"
+      />
+      <input
+        type="number"
+        name="kms_driven"
+        placeholder="How many KMs Car is drived"
+        required="required"
+      />
+      <input
+        type="number"
+        name="owner"
+        placeholder="Are you Owner?"
+        required="required"
+      />
+      <input
+        type="number"
+        name="no_year"
+        placeholder="Age of car in Years"
+        required="required"
+      />
+      <input
+        type="number"
+        name="fuel_type"
+        placeholder="Diesel ?"
+        required="required"
+      />
+      <input
+        type="number"
+        name="petrol"
+        placeholder="Petrol ?"
+        required="required"
+      />
+      <input
+        type="number"
+        name="seller_type"
+        placeholder="Seller type individual=1 or Salesman=0"
+        required="required"
+      />
+      <input
+        type="number"
+        name="automatic_car"
+        placeholder="Automatic Car ?"
+        required="required"
+      />
+      <button type="submit" class="btn btn-primary btn-block btn-large">
+        Predict Price
+      </button>
+    </form>
+    <br />
+    <br />
+    <p>{{prediction_text}}</p>
+  </body>
+</html>
